@@ -1,0 +1,106 @@
+
+
+.mobile_only { display: none; }
+.desktop_only { display: block; }
+
+.app_container,
+.container {
+  display: block;
+  width: auto;
+  max-width: 960px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.wrap_form {
+  padding: 20px;
+  margin-top: 20px;
+  background: #ededed;
+  overflow: hidden;
+}
+
+.input_wrap {
+  padding: 10px 2px;
+}
+
+input {
+  width: 100%;
+}
+
+.form_ui{
+  width: 100%;
+  float: left;  
+}
+
+#code  {
+  display: block;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+pre {
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  margin-bottom: 10px;
+  overflow: auto;
+  width: auto;
+  padding: 5px;
+  background-color: #eee;
+  width: 650px!ie7;
+  padding-bottom: 20px!ie7;
+  max-height: 600px;
+  color: black;
+  white-space: pre-wrap;  
+  white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+  white-space: -pre-wrap;                /* Opera 4 thru 6 */
+  white-space: -o-pre-wrap;              /* Opera 7 and up */
+  word-wrap: break-word;                 /* IE 5.5+ and up */
+}
+
+
+.wrapper_link {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hotspot_banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// Styles for the banner they need to copy across
+
+ #mydiv {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative!important;
+  margin-bottom: 100px;
+}
+
+
+
+.hotspot_banner .hotspot_area {
+  display: block;
+  width: 300px;
+  height: 60px;
+  background: rgba(0,0,0,0.5);
+
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+// .hotspot_banner .wrapper_link {
+//   border-bottom: 20px solid red;
+// }
+
+
+
+@media (max-width: 767px) {
+  .mobile_only { display: block; }
+  .desktop_only { display: none; }
+}
