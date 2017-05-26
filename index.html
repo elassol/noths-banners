@@ -11,23 +11,20 @@
 
 
 <div class="app_container">
-  <h1>Banner constructor</h1>
+  <h1>NOTHS Banner App Constructor</h1>
     
     <!-- passion-for-pattern-partners Banner -->  
     <div class="module_container hotspot_banner">
-      <div class="content_block_module content_module_has_mobile_image hotspot_container">
-       <!--  <a href="#" class="hotspot_area">test</a> -->
-        <a href="/pages/Our-favourite-gifts" title="Anniversary gifts" class="wrapper_link">
-          
-          <img id="edit_mobile_scr" class="mobile_only mobile_banner" alt="shop curated gift collections" title="shop curated gift collections" data-lazy-load-for-media="mobile" data-lazy-load-event="immediately" data-pin-nopin="true" src="https://cdn.notonthehighstreet.com/fs/3b/c8/fcaf-3e00-47be-bda8-c4b7dc5be481/original_MOB_skinny_banner_gift_edits_220517.jpg">
-          <img id="edit_desktop_scr" class="desktop_only desktop_banner" alt="shop curated gift collections" title="shop curated gift collections" data-lazy-load-event="immediately" data-pin-nopin="true" src="https://cdn.notonthehighstreet.com/fs/94/ca/7df1-e4cc-4779-ac9a-9eb42c4fe64d/original_skinny_banner_gift_edits_220517.jpg">
+      <div id="hotspot_wrapper" class="content_block_module content_module_has_mobile_image" style="display: block; position:relative;">
+        <a id="hotspot_area" href="https://www.google.co.uk/" style="width:100px;"></a>
+        <a href="/pages/Our-favourite-gifts" title="Anniversary gifts" class="wrapper_link"> 
+          <img id="edit_mobile_scr" class="mobile_only mobile_banner" alt="shop curated gift collections" title="shop curated gift collections" data-lazy-load-for-media="mobile" data-lazy-load-event="immediately" data-pin-nopin="true" src="https://cdn.notonthehighstreet.com/fs/3c/3f/29f3-a465-4888-bc57-cd806f907bc3/original_banner-mobile-image-holder.jpg">
+          <img id="edit_desktop_scr" class="desktop_only desktop_banner" alt="shop curated gift collections" title="shop curated gift collections" data-lazy-load-event="immediately" data-pin-nopin="true" src="https://cdn.notonthehighstreet.com/fs/20/4d/ab09-f697-4830-9110-e03f0daba5ab/original_banner-desktop-image-holder.jpg">
         </a>
       </div>
     </div> 
     <!-- End passion-for-pattern-partners Banner -->  
-    <div id="code">
-    
-    </div>
+
     
     <div class="wrap_form container">
     
@@ -35,26 +32,67 @@
         
         <div class="row">
           <div class="col-md-6">
-            <div class="input_wrap">
-              <p>Desktop img CDN</p> 
-              <input type="text" name="desktop_image" id="desktop_cdn">
-            </div>
-            <div class="input_wrap">
-              <p>Mobile img CDN</p> 
-              <input type="text" name="mobile_image" id="mobile_cdn">  
-            </div>
-            <div class="input_wrap">
-              <p>Desktop alt text</p> 
-              <input type="text" name="alt_text" id="alt_text">
+              <h4 class="header">1. Set images</h4>
+              <div class="collapsable_panel">
+                <div class="input_wrap">
+                  <p>Desktop img CDN</p> 
+                  <input type="text" name="desktop_image" id="desktop_cdn">
+                </div>
+                <div class="input_wrap">
+                  <p>Mobile img CDN</p> 
+                  <input type="text" name="mobile_image" id="mobile_cdn">  
+                </div>
+                <div class="input_wrap">
+                  <p>Desktop alt text</p> 
+                  <input type="text" name="alt_text" id="alt_text">
+                </div>
+              </div>
+            
+            <h4 class="header">Desktop banner hot area config</h4>
+           
+            <div class="collapsable_panel">
+              <div class="row"> 
+                <div class="col-md-6">
+                  <h4>Hotarea dimensions</h4>
+                  <div class="input_wrap">
+                    <p>Set width hotarea</p> 
+                    <input type="number" name="hotsopt_width" id="hotsopt_width">
+                  </div>
+                  <div class="input_wrap">
+                    <p>Set height hotarea</p> 
+                    <input type="number" name="hotsopt_height" id="hotsopt_height">
+                  </div>
+                </div>
+
+                 <div class="col-md-6">
+                  <h4>Hotarea coordenates</h4>
+                  <div class="input_wrap">
+                    <p>Set X Hotarea</p> 
+                    <input type="number" name="hotsopt_x" id="hotsopt_x">
+                  </div>
+                  <div class="input_wrap">
+                    <p>Set Y Hotarea</p> 
+                    <input type="number" name="hotsopt_y" id="hotsopt_y">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="col-md-6">
             <h2>Instructions</h2>
+            
+
+            <p>//cdn.notonthehighstreet.com/fs/e8/3c/9ec4-5599-4e9e-afeb-b3523a8888aa/original_skinny-banner-15off-thirdrun.jpg</p>
+
+            <p>//cdn.notonthehighstreet.com/fs/9a/27/8ff7-f243-4f45-96f0-d3116b07e7b7/original_mob-skinny-banner-15off-thirdrun.jpg</p>
+
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac maximus ante. Donec suscipit lacus leo. Sed scelerisque ullamcorper dui, ut dapibus arcu laoreet eu. Sed tempus est lectus, sit amet vestibulum magna rutrum vitae.<br/><br/>
 
             Vivamus scelerisque ante nec maximus fringilla. Morbi tincidunt, augue id tempor fermentum, arcu tellus blandit urna, id suscipit nulla justo id nunc. Sed vulputate hendrerit diam at bibendum. Proin a risus eget nisi gravida elementum eget vel est. Nulla et orci enim. Vestibulum hendrerit venenatis sapien, aliquet ullamcorper enim mollis ut.</p>  
-          </div>
+
+
+           </div>
 
         </div>
           
@@ -62,6 +100,9 @@
 
         
       </form>
+    </div>
+
+    <div id="code">
     </div>
     
 

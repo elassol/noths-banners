@@ -52,10 +52,10 @@ pre {
   max-height: 600px;
   color: black;
   white-space: pre-wrap;  
-  white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
-  white-space: -pre-wrap;                /* Opera 4 thru 6 */
-  white-space: -o-pre-wrap;              /* Opera 7 and up */
-  word-wrap: break-word;                 /* IE 5.5+ and up */
+  white-space: -moz-pre-wrap !important; 
+  white-space: -pre-wrap;                
+  white-space: -o-pre-wrap;             
+  word-wrap: break-word;                
 }
 
 
@@ -73,17 +73,16 @@ pre {
 
 // Styles for the banner they need to copy across
 
- #mydiv {
+ #hotspot_wrapper {
   display: block;
   width: 100%;
   height: auto;
-  position: relative!important;
-  margin-bottom: 100px;
+  position: relative;
 }
 
 
 
-.hotspot_banner .hotspot_area {
+#hotspot_area {
   display: block;
   width: 300px;
   height: 60px;
@@ -91,7 +90,7 @@ pre {
 
   position: absolute;
   top:0;
-  left:0;
+  right:0;
 }
 
 // .hotspot_banner .wrapper_link {
@@ -99,8 +98,55 @@ pre {
 // }
 
 
+h4.header {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+  color: #555;
+}
+
+h4.header:after {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  content: '';
+  display: block;
+  width: 0; 
+  height: 0; 
+  border-top: 7px solid #333;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  
+}
+
+h4.header:hover {
+  color: black;
+}
+
+h4.header.active:after {
+  top: 2px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #333;
+  border-right:0;
+}
+
+.collapsable_panel.hide {
+  display: none;
+}
+
+
 
 @media (max-width: 767px) {
   .mobile_only { display: block; }
   .desktop_only { display: none; }
+  
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+
 }

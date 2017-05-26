@@ -2,10 +2,16 @@
 
   console.log("it's alive");
 
+
+
   var state = {
     mobileCdn: '',
     desktopCdn: '',
-    alt: ''
+    alt: '',
+    mywidth: '',
+    myheight: '',
+    myX: '',
+    myY: ''
   }
 
   // Desktop
@@ -18,17 +24,29 @@
   var cdn_desktop = document.getElementById('desktop_cdn');
   var cdn_mobile = document.getElementById('mobile_cdn');
   var alt_text = document.getElementById('alt_text');
+
+  var hotsopt_width = document.getElementById('hotsopt_width');
+  var hotsopt_height = document.getElementById('hotsopt_height');
+  var hotsopt_x = document.getElementById('hotsopt_x');
+  var hotsopt_y = document.getElementById('hotsopt_y');
+
   var myresult = document.getElementById('result');
   var mycode = document.getElementById('code');
 
+
+  // var for preview elements 
   var src_desktop = document.getElementById("edit_desktop_scr");
   var src_mobile = document.getElementById("edit_mobile_scr");
+  var hotspot = document.getElementById('hotspot_area');
 
 
   // Var for markup
   var html_open = "&lt;div class='module_container'&gt;"+ "<br/>" + "&nbsp;&lt;div class='content_block_module content_module_has_mobile_image'&gt;" + "<br/>";
-  
   var html_close = "<br/>" + "&nbsp;&lt;/div&gt;" + "<br/>" + "&lt;/div&gt;";
+
+  var css_open = "&lt;!-- styles banner --&gt;<br/>&lt;style&gt;";
+  var css_close = "&lt;/style&gt;<br/>&lt;!-- styles banner --&gt;<br/><br/>";
+
 
   $("#desktop_cdn").change( function(){
     state.desktopCdn = cdn_desktop.value;
@@ -36,6 +54,7 @@
   })
 
   $("#mobile_cdn").change( function(){
+    state.mobileCdn = cdn_mobile.value;
     showMyResult();
   })
 
@@ -45,28 +64,75 @@
     showMyResult();
   })
 
-  // build html for desktop image
+  $("#hotsopt_width").change(function(){
+    state.mywidth = hotsopt_width.value;
+    controlerhotspot();
+    
+  })
+
+  $("#hotsopt_height").change(function(){
+    state.myheight = hotsopt_height.value;
+    controlerhotspot();
+  })
+
+  $("#hotsopt_x").change(function(){
+    state.myX = hotsopt_x.value;
+    controlerhotspot();
+    buildcss ();
+  })
+
+  $("#hotsopt_y").change(function(){
+    state.myY = hotsopt_y.value;
+    controlerhotspot();
+    buildcss ();
+  })
+
+  // build html for the images
 
   function desktopImageHtml (){
-    html_image = "&nbsp; &nbsp; &lt;img id='edit_mobile_scr' class='mobile_only mobile_banner' alt='" + state.alt + "' title='shop curated gift collections' data-lazy-load-for-media='mobile' data-lazy-load-event='immediately' data-pin-nopin='true' src='" + state.desktopCdn + "'&gt;";
-    
+    dektop_image = "&nbsp; &nbsp; &lt;img id='edit_mobile_scr' class='mobile_only mobile_banner' alt='" + state.alt + "' title='" + state.alt + "' data-lazy-load-for-media='mobile' data-lazy-load-event='immediately' data-pin-nopin='true' src='" + state.desktopCdn + "'&gt;<br/>"; 
+  }
+
+  function mobileImageHtml (){
+    mobile_image = "&nbsp; &nbsp; &lt;img id='edit_mobile_scr' class='mobile_only mobile_banner' alt='" + state.alt + "' title='" + state.alt + "' data-lazy-load-for-media='mobile' data-lazy-load-event='immediately' data-pin-nopin='true' src='" + state.mobileCdn + "'&gt;"; 
+  }
+
+  // build css markup
+
+  function buildcss (){
+    desktop_css = css_open + "<br/>#hotspot_area {<br/>right:" + state.myX + "px;<br/>top:" + state.myY  + "px;<br/>}<br/>" + css_close;
+    showMyResult();
   }
   
 
-
+  // function to build the html code for the banner
   function showMyResult (){
     
     desktopImageHtml();
-
-    $("#code").html("<pre>" + html_open + html_image + html_close + "</pre>");
+    mobileImageHtml();
+    // $("#code").html("<pre>" + desktop_css + "</pre>");
+    $("#code").html("<pre>" + desktop_css + html_open + dektop_image + mobile_image  + html_close + "</pre>");
 
     src_desktop.src = "https:" + cdn_desktop.value;
+    src_mobile.src = "https:" + cdn_mobile.value;
 
-
-    // console.log(cdn_mobile.value);
-    // $("#code").html("<div class='alert-box success'><p><b>URL:</b> " + cdn_mobile.value + "</p></div>");
-    // src_mobile.src = "https:" + cdn_mobile.value;
   }
+
+  function controlerhotspot (){
+    hotspot.style.width = state.mywidth + "px";
+    hotspot.style.height = state.myheight + "px";
+    hotspot.style.top = state.myY + "px";
+    hotspot.style.right = state.myX + "px";
+  }
+
+
+  // Collpase indiviudal panels 
+  $(".header").click(function(){
+        $(this).toggleClass("active");
+        $(this).next().toggleClass("hide");
+
+
+  }); 
 
 
 
