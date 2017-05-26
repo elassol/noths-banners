@@ -2,6 +2,12 @@
 
   console.log("it's alive");
 
+  var state = {
+    mobileCdn: '',
+    desktopCdn: '',
+    alt: ''
+  }
+
   // Desktop
   //cdn.notonthehighstreet.com/fs/79/5f/9fbd-2534-4060-a03f-7730d5aeec0a/original_skinny-banner-fathers-day-graphic-24-05-2016.jpg
 
@@ -25,9 +31,8 @@
   var html_close = "<br/>" + "&nbsp;&lt;/div&gt;" + "<br/>" + "&lt;/div&gt;";
 
   $("#desktop_cdn").change( function(){
-    mycdn = cdn_desktop.value;
+    state.desktopCdn = cdn_desktop.value;
     showMyResult();
-    return mycdn;
   })
 
   $("#mobile_cdn").change( function(){
@@ -36,17 +41,14 @@
 
   //Add alt text and title text
   $("#alt_text").change( function(){
-    myalt = alt_text.value;
+    state.alt = alt_text.value;
     showMyResult();
-    return myalt;
   })
 
   // build html for desktop image
 
   function desktopImageHtml (){
-    console.log(mycdn);
-    console.log(myalt);
-    html_image = "&nbsp; &nbsp; &lt;img id='edit_mobile_scr' class='mobile_only mobile_banner' alt='" + myalt + "' title='shop curated gift collections' data-lazy-load-for-media='mobile' data-lazy-load-event='immediately' data-pin-nopin='true' src='" + mycdn + "'&gt;";
+    html_image = "&nbsp; &nbsp; &lt;img id='edit_mobile_scr' class='mobile_only mobile_banner' alt='" + state.alt + "' title='shop curated gift collections' data-lazy-load-for-media='mobile' data-lazy-load-event='immediately' data-pin-nopin='true' src='" + state.desktopCdn + "'&gt;";
     
   }
   
