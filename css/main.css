@@ -1,7 +1,14 @@
 
 
+/////////////////////////////////////////
+// App styles 
+/////////////////////////////////////////
+
 .mobile_only { display: none; }
 .desktop_only { display: block; }
+
+.module_container_mob.hotspot_banner.mobile_only { display: none; }
+.module_container.hotspot_banner.desktop_only { display: block; }
 
 .app_container,
 .container {
@@ -10,6 +17,22 @@
   max-width: 960px;
   height: auto;
   margin: 0 auto;
+}
+
+.module_container {
+  margin-bottom: 24px;
+}
+
+.module_container_mob {
+  max-width: 767px;
+
+}
+
+.content_module_has_mobile_image img,
+.module_container_mob  img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .wrap_form {
@@ -58,46 +81,6 @@ pre {
   word-wrap: break-word;                
 }
 
-
-.wrapper_link {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.hotspot_banner {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-// Styles for the banner they need to copy across
-
- #hotspot_wrapper {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-
-
-
-#hotspot_area {
-  display: block;
-  width: 300px;
-  height: 60px;
-  background: rgba(0,0,0,0.5);
-
-  position: absolute;
-  top:0;
-  right:0;
-}
-
-// .hotspot_banner .wrapper_link {
-//   border-bottom: 20px solid red;
-// }
-
-
 h4.header {
   padding-left: 20px;
   position: relative;
@@ -136,10 +119,61 @@ h4.header.active:after {
 }
 
 
+// Styles for the banner preview
+////////////////////////////////
+
+.wrapper_link {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hotspot_banner {
+  width: 100%;
+  height: auto;
+}
+
+
+
+ #hotspot_wrapper,
+ #hotspot_wrapper_mob {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+
+
+#hotspot_area,
+#hotspot_area_mob  {
+  display: block;
+  width: 300px;
+  height: 60px;
+  background: rgba(0,0,0,0.5);
+
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+// Mobile preview banner
+
+
+
+
+
+
+
 
 @media (max-width: 767px) {
   .mobile_only { display: block; }
   .desktop_only { display: none; }
+
+  .module_container_mob.hotspot_banner.mobile_only { display: block; }
+  .module_container.hotspot_banner.desktop_only { display: none; }
+
+  .app_container { background: red; }
   
   img {
     display: block;
