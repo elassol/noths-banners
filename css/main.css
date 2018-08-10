@@ -1,8 +1,8 @@
 
 
-/////////////////////////////////////////
+/*////////////////////////////////////////
 // App styles 
-/////////////////////////////////////////
+////////////////////////////////////////*/
 
 .mobile_only { display: none; }
 .desktop_only { display: block; }
@@ -119,8 +119,8 @@ h4.header.active:after {
 }
 
 
-// Styles for the banner preview
-////////////////////////////////
+/*/ Styles for the banner preview
+///////////////////////////////*/
 
 .wrapper_link {
   display: block;
@@ -157,7 +157,7 @@ h4.header.active:after {
   right:0;
 }
 
-// Mobile preview banner
+/* Mobile preview banner */
 
 
 
